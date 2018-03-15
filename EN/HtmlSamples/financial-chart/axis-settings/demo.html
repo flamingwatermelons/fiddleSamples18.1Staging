@@ -1,0 +1,57 @@
+<script src="http://staging.igniteui.local/18-1/js/modernizr.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+<script src="http://staging.igniteui.local/18-1/IgniteUI/js/infragistics.core.js"></script>
+<script src="http://staging.igniteui.local/18-1/IgniteUI/js/infragistics.dv.js"></script>
+<script src="http://staging.igniteui.local/18-1/js-data/Data"></script>
+<link href="http://staging.igniteui.local/18-1/IgniteUI/css/themes/infragistics/infragistics.theme.css" rel="stylesheet"></link>
+<link href="http://staging.igniteui.local/18-1/IgniteUI/css/structure/infragistics.css" rel="stylesheet"></link>
+<link rel="stylesheet" href="http://staging.igniteui.local/18-1/IgniteUI/css/structure/modules/infragistics.ui.chart.css"></link>
+<link rel="stylesheet" href="http://staging.igniteui.local/18-1/IgniteUI/css/structure/modules/infragistics.ui.financialchart.css"></link>
+
+<div id="chart" style="width:800px;height:600px"></div>
+    
+    <div>
+        <fieldset id="chartOptions">
+            <legend>Axis Settings</legend>
+
+            <div class="optionContainer">
+                X-Axis Mode
+                <select id="xAxisMode">
+                    <option value="ordinal">Ordinal</option>
+                    <option value="time">Time</option>
+                </select>
+            </div>
+            <div class="optionContainer">
+                Y-Axis Mode
+                <select id="yAxisMode">
+                    <option value="numeric">Numeric</option>
+                    <option value="percentChange">Percent Change</option>
+                </select>
+            </div>
+            <div class="optionContainer">
+                X-Axis Label Visibility
+                <select id="xAxisLabelVisibility">
+                    <option value="visible">Visible</option>
+                    <option value="collapsed">Collapsed</option>
+                </select>
+            </div>
+            <div class="optionContainer">
+                Y-Axis Label Visibility
+                <select id="yAxisLabelVisibility">
+                    <option value="visible">Visible</option>
+                    <option value="collapsed">Collapsed</option>
+                </select>
+            </div>
+            <div class="optionContainer">
+                Axis Font Size
+                <div id="xAxisAngleSlider" class="sliderBounds"></div>
+                <label id="xAxisAngleLabel">0</label>
+            </div>
+            <div class="optionContainer">
+                Axis Font Size
+                <div id="yAxisAngleSlider" class="sliderBounds"></div>
+                <label id="yAxisAngleLabel">0</label>
+            </div>
+        </fieldset>
+    </div>
