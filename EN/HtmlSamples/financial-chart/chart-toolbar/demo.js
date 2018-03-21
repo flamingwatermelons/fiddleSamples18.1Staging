@@ -5,6 +5,6 @@ $(function () {
             });
 
             $("#chkVisible").change(function(evt){
-                $("#chart").igFinancialChart("option", "isToolbarVisible", evt.target.checked);
-            });
+				$("#chart").igFinancialChart("option", "isToolbarVisible", evt.target.checked);
+			});
         });
