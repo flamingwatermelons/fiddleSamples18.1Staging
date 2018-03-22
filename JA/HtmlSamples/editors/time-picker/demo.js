@@ -17,9 +17,11 @@ $(function () {
             });
 
             $("#meetingTime").igTimePicker({
-                minValue: "09:00 AM",
-                maxValue: "06:00 PM",
+                timeInputFormat: "HH:mm",
+                timeDisplayFormat: "HH:mm",
+                minValue: "09:00",
+                maxValue: "18:00",
                 buttonType: "clear",
-                value: "02:00 PM"
+                value: "14:00"
             });
         });
