@@ -15,16 +15,6 @@ $(function () {
             function loadWorkbook(workbook) {
                 $("#spreadsheet").igSpreadsheet("option", "workbook", workbook);
             }
-    
-            //using the save method, which is exposed by the Excel library
-            function saveWorkbook(workbook, name) {
-                $("#spreadsheet").igSpreadsheet("option", "workbook")
-                    .save({ type: 'blob' }, function (data) {
-                        saveAs(data, name);
-                    }, function (error) {
-                        alert('Error exporting: : ' + error);
-                    });
-            }
             
             function createWorkbook() {
                 var workbook = new $.ig.excel.Workbook($.ig.excel.WorkbookFormat.excel2007);

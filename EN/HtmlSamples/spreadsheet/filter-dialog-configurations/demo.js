@@ -81,6 +81,7 @@ var workbook;
         function showTableDialog() {		   
 			worksheet = workbook.worksheets('Sheet1'); 
 			worksheet.filterSettings().clearRegion();
+            worksheet.tables().clear();
 			table = worksheet.tables().add('A1:D8', true); 		
 			var executed = $("#spreadsheet").igSpreadsheet("showFilterDialogForTable", table.columns(1));
         }
