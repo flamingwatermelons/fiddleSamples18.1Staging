@@ -1,13 +1,16 @@
 $(function () {
-function AlphaVantageService() {
-            this.API_KEY = "ZCOEMEHP7RSKEW78";
-            this.SERVICE_URL = "https://www.alphavantage.co/query?function={0}&symbol={1}&outputsize={2}&apikey=" + this.API_KEY;
+function StockDataService() {
+            this.ApiKey = "apikey=ZCOEMEHP7RSKEW78";
+            this.QueryFunction = "/query?function=TIME_SERIES_DAILY";
+            this.QueryOutput = "outputsize={1}";
+            this.Querysymbol = "symbol={0}";
+            this.ServiceAddress = "https://www.alphavantage.co";
+            this.ServiceUrl = this.ServiceAddress + this.QueryFunction + "&" + this.Querysymbol + "&" + this.QueryOutput + "&" + this.ApiKey;
         }
-        AlphaVantageService.prototype.timeSeriesDaily = function (symbol, truncate, callback) {
+        StockDataService.prototype.requestDataFor = function (symbol, truncate, callback) {
             var outputSize = truncate ? "compact" : "full";
-            var url = this.SERVICE_URL.replace("{0}", "TIME_SERIES_DAILY").replace("{1}", symbol).replace("{2}", outputSize);
-
-
+            var url = this.ServiceUrl.replace("{0}", symbol).replace("{1}", outputSize);
+            console.log("getting data from: \n" + url)
             $.ajax({
                 type: "Get",
                 url: url,
@@ -27,6 +30,7 @@ function AlphaVantageService() {
                             volume: +item["5. volume"]
                         });
                     }
+                    result.title = data["Meta Data"]["2. Symbol"];
                     callback(result);
                 }
             });
@@ -34,22 +38,22 @@ function AlphaVantageService() {
 
         $(function () {
             
-            var alpha = new AlphaVantageService();
-            alpha.timeSeriesDaily("MSFT", true, createGrid);
+            var service = new StockDataService();
+            service.requestDataFor("MSFT", true, createChart);
 
-            function createGrid(data) {
+            function createChart(data) {
                 $("#chart").igFinancialChart({
                     dataSource: data
                 });
 
                 setTimeout(checkForData, 60000);
             }
-            function updateGrid(data) {
+            function updateChart(data) {
                 $("#chart").igFinancialChart("option", "dataSource", data);
                 setTimeout(checkForData, 60000);
             }
             function checkForData() {
-                alpha.timeSeriesDaily("MSFT", true, updateGrid);
+                alpha.timeSeriesDaily("MSFT", true, updateChart);
                 
             }
         });

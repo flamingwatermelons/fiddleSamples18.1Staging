@@ -3,7 +3,8 @@ $(function () {
             var data = PriceData.AMZN();
             $("#chart").igFinancialChart({
                 dataSource: data,
-                chartType: "line"
+                chartType: "candle",
+                zoomSliderType: "candle",
             });
 
         });
