@@ -1,8 +1,19 @@
 $(function () {
-            var data = PriceData.AMZN();
+            var stocks = []; 
+            stocks.push(PriceData.AMZN());
+            stocks.push(PriceData.GOOG());
+
             $("#chart").igFinancialChart({
-                dataSource: data
-            });
+                dataSource: stocks,
+                zoomSliderType: "none", 
+                volumeType: "line", 
+                xAxisMode: "ordinal",
+                yAxisMode: "numeric",
+                xAxisLabelVisibility: "visible",
+                yAxisLabelVisibility: "visible",
+                xAxisLabelAngle: 0,
+                yAxisLabelAngle: 0,
+            }); 
             
             $("#xAxisMode").selectmenu({
                 select: function(evt, ui) {
@@ -26,9 +37,7 @@ $(function () {
             });
             
             $("#xAxisAngleSlider").slider({
-                min: -180,
-                max: 179,
-                value: 0,
+                min: 0, max: 180, value: 0,
                 slide: function (event, ui) {
                     $("#chart").igFinancialChart("option", "xAxisLabelAngle", ui.value);
                     $("#xAxisAngleLabel").text(ui.value);
@@ -36,9 +45,7 @@ $(function () {
             });
 
             $("#yAxisAngleSlider").slider({
-                min: -90,
-                max: 269,
-                value: 0,
+                min: -90, max: 90, value: 0,
                 slide: function (event, ui) {
                     $("#chart").igFinancialChart("option", "yAxisLabelAngle", ui.value);
                     $("#yAxisAngleLabel").text(ui.value);

@@ -1,14 +1,11 @@
 $(function () {
 
-            var data = [];
-            data.push(PriceData.AMZN());
-            data.push(PriceData.GOOG());
-            data.push(PriceData.MSFT());
-            data.push(PriceData.TGT());
-            data.push(PriceData.TSLA());
+            var stocks = [];
+            stocks.push(PriceData.MSFT());
+            stocks.push(PriceData.TGT());
 
             $("#chart").igFinancialChart({
-                dataSource: data
+                dataSource: stocks,  
             });
 
         });
