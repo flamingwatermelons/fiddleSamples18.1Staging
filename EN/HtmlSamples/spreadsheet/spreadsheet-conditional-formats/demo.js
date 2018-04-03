@@ -53,7 +53,7 @@ $(function () {
                                     cell.value(true);
                                 }
                                 else {
-                                    cell.value("");
+                                    cell.value(false);
                                 }
                             }
                             else if (i == 5) {
@@ -78,10 +78,15 @@ $(function () {
                 textCondition.cellFormat().font().colorInfo(new $.ig.excel.WorkbookColorInfo("blue"));
 
                 var uniqueCondition = sheet.conditionalFormats().addUniqueCondition("D2:D15");
-                uniqueCondition.cellFormat().font().colorInfo(new $.ig.excel.WorkbookColorInfo("orange"));
+                uniqueCondition.cellFormat().font().colorInfo(new $.ig.excel.WorkbookColorInfo("orange"));                
 
-                var notBlankCondition = sheet.conditionalFormats().addNoBlanksCondition("E2:E15");
-                notBlankCondition.cellFormat().font().colorInfo(new $.ig.excel.WorkbookColorInfo("green"));
+                var operatorCondition1 = sheet.conditionalFormats().addOperatorCondition("E2:E15");
+                operatorCondition1.setOperand1("TRUE");
+                operatorCondition1.cellFormat().font().colorInfo(new $.ig.excel.WorkbookColorInfo("green"));
+
+                var operatorCondition2 = sheet.conditionalFormats().addOperatorCondition("E2:E15");
+                operatorCondition2.setOperand1("FALSE");
+                operatorCondition2.cellFormat().font().colorInfo(new $.ig.excel.WorkbookColorInfo("red"));
 
                 sheet.conditionalFormats().addDataBarCondition("F2:F15");
 
