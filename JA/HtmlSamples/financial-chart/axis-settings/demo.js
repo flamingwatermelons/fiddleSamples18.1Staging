@@ -1,7 +1,7 @@
 $(function () {
             var stocks = []; 
-            stocks.push(PriceData.AMZN());
-            stocks.push(PriceData.GOOG());
+            stocks.push(StockData.AMZN());
+            stocks.push(StockData.GOOG());
 
             $("#chart").igFinancialChart({
                 dataSource: stocks,
