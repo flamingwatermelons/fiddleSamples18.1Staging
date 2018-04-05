@@ -46,15 +46,6 @@ function StockDataService() {
                     dataSource: data
                 });
 
-                setTimeout(checkForData, 60000);
-            }
-            function updateChart(data) {
-                $("#chart").igFinancialChart("option", "dataSource", data);
-                setTimeout(checkForData, 60000);
-            }
-            function checkForData() {
-                alpha.timeSeriesDaily("MSFT", true, updateChart);
-                
             }
         });
 });
