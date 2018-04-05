@@ -1,8 +1,8 @@
 $(function () {
 
             var stocks = [];
-            stocks.push(PriceData.MSFT());
-            stocks.push(PriceData.TGT());
+            stocks.push(StockData.MSFT());
+            stocks.push(StockData.TGT());
 
             $("#chart").igFinancialChart({
                 dataSource: stocks,  
