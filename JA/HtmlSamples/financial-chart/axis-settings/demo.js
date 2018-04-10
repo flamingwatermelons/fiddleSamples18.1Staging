@@ -13,6 +13,9 @@ $(function () {
                 yAxisLabelVisibility: "visible",
                 xAxisLabelAngle: 0,
                 yAxisLabelAngle: 0,
+                xAxisLabelTextStyle: "10pt Verdona",
+                yAxisLabelTextStyle: "10pt Verdona",
+                isToolbarVisible: false, 
             }); 
             
             $("#xAxisMode").selectmenu({
@@ -36,19 +39,19 @@ $(function () {
                 }
             });
             
-            $("#xAxisAngleSlider").slider({
-                min: 0, max: 180, value: 0,
+            $("#xAxisLabelAngleSlider").slider({
+                min: -90, max: 90, value: 0,
                 slide: function (event, ui) {
                     $("#chart").igFinancialChart("option", "xAxisLabelAngle", ui.value);
-                    $("#xAxisAngleLabel").text(ui.value);
+                    $("#xAxisLabelAngle").text(ui.value);
                 }
             });
 
-            $("#yAxisAngleSlider").slider({
+            $("#yAxisLabelAngleSlider").slider({
                 min: -90, max: 90, value: 0,
                 slide: function (event, ui) {
                     $("#chart").igFinancialChart("option", "yAxisLabelAngle", ui.value);
-                    $("#yAxisAngleLabel").text(ui.value);
+                    $("#yAxisLabelAngle").text(ui.value);
                 }
             });
         });
