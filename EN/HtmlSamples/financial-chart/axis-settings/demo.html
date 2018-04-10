@@ -9,19 +9,18 @@
 <link rel="stylesheet" href="http://staging.igniteui.local/18-1/IgniteUI/css/structure/modules/infragistics.ui.chart.css"></link>
 <link rel="stylesheet" href="http://staging.igniteui.local/18-1/IgniteUI/css/structure/modules/infragistics.ui.financialchart.css"></link>
 
-<div id="chart" style="width:1000px;height:500px"></div>
+<div id="chart" style="width:98%;height:500px"></div>
     
-    <div style="width:1000px;height:600px">
+    <div style="width:98%;height:300px">
         <fieldset id="chartOptions">
             <legend>Axis Settings</legend>
 
             <table>
-
                 <tr> 
                     <td>
                         <div class="optionContainer">
-                            X-Axis Mode
-                            <select id="xAxisMode">
+                            <label>X-Axis Mode</label>
+                            <select id="xAxisMode" class="selectBounds">
                                 <option value="ordinal">Ordinal</option>
                                 <option value="time">Time</option>
                             </select>
@@ -30,8 +29,8 @@
                          
                     <td>
                         <div class="optionContainer">
-                            X-Axis Label Visibility
-                            <select id="xAxisLabelVisibility">
+                            <label>X-Axis Label Visibility</label>
+                            <select id="xAxisLabelVisibility" class="selectBounds">
                                 <option value="visible">Visible</option>
                                 <option value="collapsed">Collapsed</option>
                             </select>
@@ -39,9 +38,9 @@
                     </td>
                     <td>
                         <div class="optionContainer">
-                            Axis Font Size
-                            <div id="xAxisAngleSlider" class="sliderBounds"></div>
-                            <label id="xAxisAngleLabel">0</label>
+                            <label>X-Axis Label Angle</label>
+                            <div id="xAxisLabelAngleSlider" class="sliderBounds"></div>
+                            <label id="xAxisLabelAngle">0</label>
                         </div>
                     </td>                     
                 </tr>
@@ -49,8 +48,8 @@
 
                     <td>
                         <div class="optionContainer">
-                            Y-Axis Mode
-                            <select id="yAxisMode">
+                            <label>Y-Axis Mode</label>
+                            <select id="yAxisMode" class="selectBounds">
                                 <option value="numeric">Numeric</option>
                                 <option value="percentChange">Percent Change</option>
                             </select>
@@ -59,8 +58,8 @@
 
                     <td>
                         <div class="optionContainer">
-                            Y-Axis Label Visibility
-                            <select id="yAxisLabelVisibility">
+                            <label>Y-Axis Label Visibility</label>
+                            <select id="yAxisLabelVisibility" class="selectBounds">
                                 <option value="visible">Visible</option>
                                 <option value="collapsed">Collapsed</option>
                             </select>
@@ -69,9 +68,9 @@
 
                     <td>
                         <div class="optionContainer">
-                            Axis Font Size
-                            <div id="yAxisAngleSlider" class="sliderBounds"></div>
-                            <label id="yAxisAngleLabel">0</label>
+                            <label>Y-Axis Label Angle</label>
+                            <div id="yAxisLabelAngleSlider" class="sliderBounds"></div>
+                            <label id="yAxisLabelAngle">0</label>
                         </div>
                     </td> 
 

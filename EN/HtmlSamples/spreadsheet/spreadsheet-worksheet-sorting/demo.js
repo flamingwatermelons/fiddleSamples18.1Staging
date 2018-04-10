@@ -1,39 +1,33 @@
 $(function () {
-			
-		//Initializing igSpreadsheet
-			$("#spreadsheet").igSpreadsheet({
-				height: "600",
-				width: "100%",
-			});
+            
+        //Initializing igSpreadsheet
+            $("#spreadsheet").igSpreadsheet({
+                height: "600",
+                width: "100%",
+            });
 
-		});
+        });
 
-		//display the workbook via igSpreadsheet
-		function loadWorkbook(workbook) {
-			$("#spreadsheet").igSpreadsheet("option", "workbook", workbook);
-		}
+        //display the workbook via igSpreadsheet
+        function loadWorkbook(workbook) {
+            $("#spreadsheet").igSpreadsheet("option", "workbook", workbook);
+        }
 
 
-		function createWorkbook() {
-			var workbook = new $.ig.excel.Workbook($.ig.excel.WorkbookFormat.excel2007);
-			var sheet = workbook.worksheets().add('Sheet1');
+        function createWorkbook() {
+            var workbook = new $.ig.excel.Workbook($.ig.excel.WorkbookFormat.excel2007);
+            var sheet = workbook.worksheets().add('Sheet1');
 
-			sheet.columns(0).setWidth(72, $.ig.excel.WorksheetColumnWidthUnit.pixel);
+            sheet.columns(0).setWidth(72, $.ig.excel.WorksheetColumnWidthUnit.pixel);
             sheet.columns(1).setWidth(160, $.ig.excel.WorksheetColumnWidthUnit.pixel);
             sheet.columns(2).setWidth(110, $.ig.excel.WorksheetColumnWidthUnit.pixel);
             sheet.columns(3).setWidth(275, $.ig.excel.WorksheetColumnWidthUnit.pixel);
 
-			// Add a light color fill to all cells in the A3:G17 region to visually separate it from the rest of the sheet. We can iterate
-			// all cells in the regions by getting an enumerator for the region and enumerating each item.
-			var light1Fill = $.ig.excel.CellFill.createSolidFill(new $.ig.excel.WorkbookColorInfo($.ig.excel.WorkbookThemeColorType.light1));
-			var cells = sheet.getRegion('A2:D9').getEnumerator();
-			while (cells.moveNext()) {
-				cells.current().cellFormat().fill(light1Fill);
-			}
+            sheet.rows(0).cellFormat().font().bold(true);
 
-			// Populate the sheet with data
+            // Populate the sheet with data
 
-		    sheet.getCell('A1').value('ID');
+            sheet.getCell('A1').value('ID');
             sheet.getCell('B1').value('Applicant');
             sheet.getCell('C1').value('Status');
             sheet.getCell('D1').value('Comment');
@@ -69,26 +63,26 @@ $(function () {
             sheet.getCell('C7').value('New');
             sheet.getCell('D7').value('');
 
-			// Load the workbook in igSpreadsheet
-			loadWorkbook(workbook);
-		}
+            // Load the workbook in igSpreadsheet
+            loadWorkbook(workbook);
+        }
         
-		var sortDirection = $.ig.excel.SortDirection.descending
+        var sortDirection = $.ig.excel.SortDirection.descending
 
-		function sortWorksheet() {
+        function sortWorksheet() {
 
-		    var workbook = $("#spreadsheet").igSpreadsheet("option", "workbook");
-		    var sheet = workbook.worksheets(0);
+            var workbook = $("#spreadsheet").igSpreadsheet("option", "workbook");
+            var sheet = workbook.worksheets(0);
 
-		    sheet.sortSettings().sortType($.ig.excel.WorksheetSortType.rows);
-		    sheet.sortSettings().caseSensitive(true);
+            sheet.sortSettings().sortType($.ig.excel.WorksheetSortType.rows);
+            sheet.sortSettings().caseSensitive(true);
 
-		    sheet.sortSettings().setRegion("A2:D7");
-		    sheet.sortSettings().sortConditions().clear();
-		    sheet.sortSettings().sortConditions().add(new $.ig.excel.RelativeIndex(1), new $.ig.excel.OrderedSortCondition(sortDirection));
+            sheet.sortSettings().setRegion("A2:D7");
+            sheet.sortSettings().sortConditions().clear();
+            sheet.sortSettings().sortConditions().add(new $.ig.excel.RelativeIndex(1), new $.ig.excel.OrderedSortCondition(sortDirection));
 
-		    if (sortDirection == $.ig.excel.SortDirection.descending)
-		        sortDirection = $.ig.excel.SortDirection.ascending;
-		    else
-		        sortDirection = $.ig.excel.SortDirection.descending;
-		}
+            if (sortDirection == $.ig.excel.SortDirection.descending)
+                sortDirection = $.ig.excel.SortDirection.ascending;
+            else
+                sortDirection = $.ig.excel.SortDirection.descending;
+        }
