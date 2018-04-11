@@ -15,7 +15,6 @@ $(function () {
                 yAxisLabelAngle: 0,
                 xAxisLabelTextStyle: "10pt Verdona",
                 yAxisLabelTextStyle: "10pt Verdona",
-                isToolbarVisible: false, 
             }); 
             
             $("#xAxisMode").selectmenu({
