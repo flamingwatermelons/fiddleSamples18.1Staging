@@ -154,7 +154,7 @@ $(function () {
                         horizontalZoomable: true,
                         verticalZoomable: true,
                         windowResponse: "immediate",
-                        title: "Revenue per Units Sold"
+                        title: "$$(RevenuePerUnitsSold)"
                     });
                 };
 

@@ -1,7 +1,7 @@
 $(function () {
             $("#grid").igGrid({
                 columns: [
-                    { headerText: "", key: "ID", dataType: "string", width: "100px", template: "<input type='button' onclick='deleteRow(\"${ID}\")' value='Delete row' class='delete-button'/>" },
+                    { headerText: "", key: "ID", dataType: "string", width: "100px", template: "<input type='button' onclick='deleteRow(\"${ID}\")' value='$$(ColumnFixing_DeleteRowTemplateButton)' class='delete-button'/>" },
                     { headerText: "Company Name", key: "CompanyName", dataType: "string", width: "250px" },
                     { headerText: "Contact Name", key: "ContactName", dataType: "string", width: "200px" },
                     { headerText: "Contact Title", key: "ContactTitle", dataType: "string", width: "200px" },
