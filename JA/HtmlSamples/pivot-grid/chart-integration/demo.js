@@ -154,7 +154,7 @@ $(function () {
                         horizontalZoomable: true,
                         verticalZoomable: true,
                         windowResponse: "immediate",
-                        title: "販売単位ごとの売上"
+                        title: "$$(RevenuePerUnitsSold)"
                     });
                 };
 
