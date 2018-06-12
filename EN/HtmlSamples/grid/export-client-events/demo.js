@@ -8,9 +8,7 @@ $.ig.loader({
                 'igGrid.Sorting,' +
                 'igGrid.Paging,' +
                 'igGrid.Summaries,' +
-                'modules/infragistics.documents.core.js,' +
-                'modules/infragistics.excel.js,' +
-                'modules/infragistics.gridexcelexporter.js'
+                'igGridExcelExporter'
         });
 
         $.ig.loader(function () {
