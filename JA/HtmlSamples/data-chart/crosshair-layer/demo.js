@@ -18,7 +18,8 @@ $(function () {
                 windowResponse: "immediate",
                 dataSource: data,
                 axes: [
-                    {name: "NameAxis",
+                    {
+                        name: "NameAxis",
                         type: "categoryX",
                         title: "国",
                         label: "CountryName"
@@ -68,9 +69,9 @@ $(function () {
             
             // Thickness 
             $("#thicknessSlider").slider({
-                min: 1,
+                min: 0,
                 max: 10,
-                value: 1,
+                value: 2,
                 slide: function (event, ui) {
                     $("#chart").igDataChart("option", "series", [{ name: "crosshairLayer", thickness: ui.value }]);
                     $("#thicknessLabel").text(ui.value);
@@ -82,7 +83,7 @@ $(function () {
                 min: 0,
                 max: 1,
                 step: 0.1,
-                value: 1,
+                value: 0.5,
                 slide: function (event, ui) {
                     $("#chart").igDataChart("option", "series", [{ name: "crosshairLayer", opacity: ui.value }]);
                     $("#opacityLabel").text(ui.value);

@@ -29,6 +29,7 @@ $(function () {
                         angleAxis: "angleAxis",
                         valueAxis: "radiusAxis",
                         valueMemberPath: "PhiladelphiaTemp",
+                        thickness: 5,
                         markerType: "circle"
                     }, {
                         name: "series2",
@@ -37,6 +38,7 @@ $(function () {
                         angleAxis: "angleAxis",
                         valueAxis: "radiusAxis",
                         valueMemberPath: "NewYorkCityTemp",
+                        thickness: 5,
                         markerType: "circle"
                     }],
                     horizontalZoomable: true,
