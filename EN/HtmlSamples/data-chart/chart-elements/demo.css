@@ -10,6 +10,7 @@ td { vertical-align: top; }
         #chartLegend
         {
             left: 10px;
+            /*position: absolute;*/
             font-size: 0.857em;
             top: 0px;
         }
