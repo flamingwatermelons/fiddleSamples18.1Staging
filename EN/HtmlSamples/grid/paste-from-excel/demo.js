@@ -96,7 +96,7 @@ $(function () {
 						},
 						{
 							name: "Selection",
-							mode: "single"
+							mode: "cell"
 						},
 						{
 							name: "Filtering"
@@ -129,7 +129,7 @@ $(function () {
 				}).on('keydown', function (evnt) {
 					//handle grid's keydown event
 					var ctrl = evnt.ctrlKey, key = evnt.keyCode;
-					if (ctrl && key == 86 || evnt.shiftKey && key == 45) // Ctrl-V || Shift-Ins
+					if ((ctrl || evnt.metaKey) && key == 86 || evnt.shiftKey && key == 45) // Ctrl-V || Shift-Ins
 					{
 						//on paste (Ctrl+V) move focus to textarea
 						$("#pasteHelper").focus();
