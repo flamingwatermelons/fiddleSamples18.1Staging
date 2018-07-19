@@ -55,7 +55,6 @@ $(function () {
                 columnLayouts: [
                     {
                         key: "Orders",
-                        responseDataKey: "results",
                         width: "100%",
                         autoGenerateColumns: false,
                         primaryKey: "OrderID",
@@ -141,7 +140,6 @@ $(function () {
                 columnLayouts: [
                     {
                         key: "Orders",
-                        responseDataKey: "results",
                         width: "100%",
                         autoGenerateColumns: false,
                         primaryKey: "OrderID",
@@ -227,7 +225,6 @@ $(function () {
                 columnLayouts: [
                     {
                         key: "Orders",
-                        responseDataKey: "results",
                         width: "100%",
                         autoGenerateColumns: false,
                         primaryKey: "OrderID",

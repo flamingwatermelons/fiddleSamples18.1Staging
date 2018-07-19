@@ -1,11 +1,4 @@
 $(function () {
-$.ig.loader({
-                scriptPath: "http://staging.igniteui.local/18-1/IgniteUI/js/",
-                cssPath: "http://staging.igniteui.local/18-1/IgniteUI/css/",
-                resources:'igGrid,igGridExcelExporter' 
-            });
-
-        $.ig.loader(function () {
             $(function () {
                     var data = [
                         { 'ProductID': 1, 'Name': 'Omnis ut illum nisi.', 'ProductNumber': '2973311236' },
@@ -40,4 +33,3 @@ $.ig.loader({
                     });
                 });
             });
-});

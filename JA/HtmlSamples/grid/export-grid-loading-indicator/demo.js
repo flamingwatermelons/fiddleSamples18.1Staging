@@ -1,18 +1,4 @@
 $(function () {
-$.ig.loader({
-            scriptPath: "http://staging.igniteui.local/18-1/IgniteUI/js/",
-            cssPath: "http://staging.igniteui.local/18-1/IgniteUI/css/",
-            resources: 'igGrid,' +
-                'igGrid.Hiding,' +
-                'igGrid.Filtering,' +
-                'igGrid.Sorting,' +
-                'igGrid.Paging,' +
-                'igGrid.Summaries,' +
-                'igGridExcelExporter'
-        });
-
-        $.ig.loader(function () {
-            $(function () {
                 var data = [
                         { 'ProductID': 1, 'Name': 'Omnis ut illum nisi.', 'ProductNumber': 2973311236, "InStock": true, "Quantity": 56 },
                         { 'ProductID': 2, 'Name': 'Quis quibusdam qui.', 'ProductNumber': 5907101619, "InStock": false, "Quantity": 0 },
@@ -82,5 +68,3 @@ $.ig.loader({
             function hideExportingIndicator(exportingIndicator) {
                 exportingIndicator.remove();
             }
-        });
-});
