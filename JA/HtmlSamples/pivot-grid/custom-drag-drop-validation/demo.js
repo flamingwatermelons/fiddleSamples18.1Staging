@@ -67,13 +67,12 @@ $.support.cors = true;
                 dataSource: dataSource,
                 customMoveValidation: shouldAcceptElement,
                 height: "565px",
-                width: "230px"
+                width: "20%"
             });
             $("#pivotGrid").igPivotGrid({
                 dataSource: dataSource,
                 customMoveValidation: shouldAcceptElement,
-                height: "565px",
-                width: "680px"
+                height: "565px"
             });
         });
 });
