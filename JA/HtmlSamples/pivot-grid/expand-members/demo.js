@@ -56,12 +56,12 @@ $(function () {
                     // in the column axis in the first tuple, expand the first member
                     $("#pivotGrid").igPivotGrid("expandTupleMember", "columnAxis", 0, 0, true);
                 },
-                width: "660px",
                 height: "565px"
             });
 
             $('#dataSelector').igPivotDataSelector({
                 dataSource: dataSource,
-                height: "565px"
+                height: "565px",
+                width: "20%"
             });
         });

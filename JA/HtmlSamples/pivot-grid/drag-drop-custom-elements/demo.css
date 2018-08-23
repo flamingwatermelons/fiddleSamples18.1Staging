@@ -13,6 +13,11 @@
             margin: 0 2px;
         }
 
-        #dataSelector, #pivotGrid {
+        #dataSelector {
             float: left;
+        }
+
+        #pivotGrid {
+            width: 80%;
+            float: right;
         }
