@@ -54,13 +54,13 @@ $.support.cors = true;
 
             $('#dataSelector').igPivotDataSelector({
                 dataSource: dataSource,
-                height: "565px"
+                height: "565px",
+                width: "20%"
             });
 
             $("#pivotGrid").igPivotGrid({
                 dataSource: dataSource,
-                height: "565px",
-                width: "660px"
+                height: "565px"
             });
 
             $(".custom-draggable").draggable({
