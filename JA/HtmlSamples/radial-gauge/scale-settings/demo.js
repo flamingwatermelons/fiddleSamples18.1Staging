@@ -2,7 +2,8 @@ $(function () {
             $("#radialgauge").igRadialGauge({
                 height: "350px",
                 width: "100%",
-                transitionDuration: "1500"
+                transitionDuration: "1500",
+                scaleBrush: $("#scaleBrushDropdown").val()
             });
 
 
